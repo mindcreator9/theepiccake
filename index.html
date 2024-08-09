@@ -17,6 +17,20 @@
         <button class="login-button">Login</button>
     </header>
 
+    <!-- Modal de Login -->
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Usuario</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Términos y Condiciones -->
     <div id="terms-modal" class="modal">
         <div class="modal-content">
@@ -56,54 +70,43 @@
             <p>Somos una compañía dedicada a la creación de software innovador. Nuestro equipo está compuesto por los mejores desarrolladores.</p>
         </div>
 
-<!-- Employee Section -->
-<div class="employee-container">
-    <!-- Employee 1 -->
-    <div class="employee">
-        <img src="employee-image.png" alt="Empleado 1">
-        <h3 class="employee-name">mindcreator9</h3>
-        <p class="employee-position">Founder</p>
-    </div>
-
-    <!-- Employee 2 -->
-    <div class="employee">
-        <img src="employee2-image.png" alt="Empleado 2">
-        <h3 class="employee-name">perxee</h3>
-        <p class="employee-position">Community Manager</p>
-    </div>
-</div>
-
-
-
-
-
-    <!-- New Carousel Section -->
-    <section id="links-carousel">
-        <h2>Conéctate con Nosotros</h2>
-        <div class="carousel">
-            <div class="carousel-item">
-                <a href="https://discord.gg/aWXEPYMXpJ" target="_blank">
-                    <img src="discord-logo.png" alt="Discord">
-                    <p>Únete a nuestro Discord</p>
-                </a>
+        <!-- Employee Section -->
+        <div class="employee-container">
+            <!-- Employee 1 -->
+            <div class="employee">
+                <img src="employee-image.png" alt="Empleado 1">
+                <h3 class="employee-name">mindcreator9</h3>
+                <p class="employee-position">Founder</p>
             </div>
-            <div class="carousel-item">
-                <a href="https://www.roblox.com/groups/6730392/The-epic-cake#!/about" target="_blank">
-                    <img src="roblox-logo.png" alt="Roblox">
-                    <p>Únete a nuestro grupo de Roblox</p>
-                </a>
+
+            <!-- Employee 2 -->
+            <div class="employee">
+                <img src="employee2-image.png" alt="Empleado 2">
+                <h3 class="employee-name">perxee</h3>
+                <p class="employee-position">Community Manager</p>
             </div>
-            <!-- Agrega más elementos del carrusel si es necesario -->
         </div>
-    </section>
-</div>
 
-
-
-
-
-
-
+        <!-- New Carousel Section -->
+        <section id="links-carousel">
+            <h2>Conéctate con Nosotros</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <a href="https://discord.gg/aWXEPYMXpJ" target="_blank">
+                        <img src="discord-logo.png" alt="Discord">
+                        <p>Únete a nuestro Discord</p>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="https://www.roblox.com/groups/6730392/The-epic-cake#!/about" target="_blank">
+                        <img src="roblox-logo.png" alt="Roblox">
+                        <p>Únete a nuestro grupo de Roblox</p>
+                    </a>
+                </div>
+                <!-- Agrega más elementos del carrusel si es necesario -->
+            </div>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>
