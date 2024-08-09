@@ -184,15 +184,15 @@ header h1 {
 /* Employee Section */
 .employee-container {
     display: flex;
-    flex-direction: column; /* Alinear los elementos en columna */
-    justify-content: center;
+    flex-direction: row; /* Cambiado a fila para alinear horizontalmente */
+    justify-content: space-around; /* Distribuir los empleados uniformemente */
     align-items: center;
     padding: 20px;
 }
 
 .employee {
     text-align: center;
-    margin: 0 auto; /* Asegurar la centralización */
+    margin: 0 20px; /* Margen entre empleados */
 }
 
 .employee img {
@@ -208,14 +208,15 @@ header h1 {
     margin-top: 10px;
     font-size: 1.5em;
     color: #333;
-    text-align: center; /* Centrar el texto */
+    text-align: center;
 }
 
 .employee-position {
     font-size: 1.2em;
     color: #777;
-    text-align: center; /* Centrar el texto */
+    text-align: center;
 }
+
 
 /* Animaciones */
 @keyframes fadeIn {
