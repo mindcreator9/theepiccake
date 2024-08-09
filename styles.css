@@ -1,35 +1,42 @@
+/* Ajuste general */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #f5f5dc;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Evitar desbordamiento horizontal */
 }
 
 /* Barra superior */
 header {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Permitir que el texto fluya hacia abajo si es necesario */
     align-items: center;
     background-color: #333;
     color: #fff;
     padding: 10px 20px;
-    box-sizing: border-box;
+    text-align: center; /* Centrar el texto */
 }
 
 .logo {
     display: flex;
-    align-items: center;
+    justify-content: center; /* Centrar el logo */
+    margin-bottom: 10px;
 }
 
 .logo img {
-    width: 50px; /* Ajusta el tamaño según sea necesario */
+    width: 50px;
     height: 50px;
-    margin-right: 10px;
 }
 
 header h1 {
     margin: 0;
     font-size: 1.5em;
+    word-wrap: break-word; /* Permitir que el texto se ajuste y baje de línea si es necesario */
 }
 
 .login-button {
@@ -69,7 +76,6 @@ header h1 {
     max-width: 90%;
     width: 500px;
     animation: fadeIn 0.5s ease-in-out;
-    box-sizing: border-box;
 }
 
 .hidden {
@@ -124,23 +130,24 @@ header h1 {
     animation: slideInFromLeft 1s ease-out;
     padding: 0 20px;
     box-sizing: border-box;
+    overflow: hidden; /* Asegura que el contenido no se desborde del contenedor */
 }
 
 .typing-animation {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 5.125em; /* Aumentado en un 25% */
+    font-size: 5vw; /* Ajusta el tamaño del texto en relación al ancho de la pantalla */
     color: #333;
     border-right: 4px solid;
     white-space: nowrap;
     overflow: hidden;
-    width: 0;
+    width: 100%; /* Permite que el texto ocupe el ancho del contenedor */
+    text-align: center; /* Centra el texto */
     animation: typing 3s steps(22) forwards, blink 0.5s step-end infinite alternate;
 }
 
-
 @keyframes typing {
     from { width: 0; }
-    to { width: 13ch; } /* Ajustar según el largo del texto */
+    to { width: 100%; } /* Ajusta el ancho del texto según el contenedor */
 }
 
 @keyframes blink {
@@ -148,12 +155,25 @@ header h1 {
     to { border-color: #333; }
 }
 
+/* Responsive Styles for Hero */
+@media (max-width: 768px) {
+    .typing-animation {
+        font-size: 4vw; /* Ajustar tamaño del texto para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .typing-animation {
+        font-size: 3vw; /* Ajustar tamaño del texto para pantallas aún más pequeñas */
+    }
+}
+
+
 /* Secciones */
 .section {
     padding: 40px 20px;
     text-align: center;
     animation: fadeInUp 1.5s ease;
-    box-sizing: border-box;
 }
 
 .company-info {
@@ -164,14 +184,15 @@ header h1 {
 /* Employee Section */
 .employee-container {
     display: flex;
+    flex-direction: column; /* Alinear los elementos en columna */
     justify-content: center;
     align-items: center;
     padding: 20px;
-    flex-direction: column;
 }
 
 .employee {
     text-align: center;
+    margin: 0 auto; /* Asegurar la centralización */
 }
 
 .employee img {
@@ -179,17 +200,21 @@ header h1 {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 .employee-name {
     margin-top: 10px;
     font-size: 1.5em;
     color: #333;
+    text-align: center; /* Centrar el texto */
 }
 
 .employee-position {
     font-size: 1.2em;
     color: #777;
+    text-align: center; /* Centrar el texto */
 }
 
 /* Animaciones */
@@ -249,8 +274,42 @@ header h1 {
         font-size: 0.85em;
     }
 
-    .employee {
-        max-width: 150px;
+    .employee img {
+        width: 120px; /* Ajustar tamaño en pantallas pequeñas */
+        height: 120px;
+    }
+
+    .employee-name {
+        font-size: 1.3em; /* Ajustar tamaño en pantallas pequeñas */
+    }
+
+    .employee-position {
+        font-size: 1em; /* Ajustar tamaño en pantallas pequeñas */
+    }
+
+    /* Ajustes en la barra superior */
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .login-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Ajustes en las secciones */
+    .section {
+        padding: 20px 15px;
+    }
+
+    /* Ajustes en la animación de texto */
+    .typing-animation {
+        font-size: 4em;
     }
 }
 
@@ -267,11 +326,44 @@ header h1 {
         font-size: 0.8em;
     }
 
-    .employee {
-        max-width: 120px;
+    .employee img {
+        width: 100px; /* Ajustar tamaño en pantallas más pequeñas */
+        height: 100px;
+    }
+
+    .employee-name {
+        font-size: 1.1em; /* Ajustar tamaño en pantallas más pequeñas */
+    }
+
+    .employee-position {
+        font-size: 0.9em; /* Ajustar tamaño en pantallas más pequeñas */
+    }
+
+    /* Ajustes en la barra superior */
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    header h1 {
+        font-size: 1em;
+    }
+
+    .login-button {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+
+    /* Ajustes en las secciones */
+    .section {
+        padding: 15px 10px;
+    }
+
+    /* Ajustes en la animación de texto */
+    .typing-animation {
+        font-size: 3.5em;
     }
 }
-
 
 /* Carousel Styles */
 #links-carousel {
@@ -309,29 +401,14 @@ header h1 {
 
 .carousel-item p {
     font-size: 1em;
-    color: #333;
+    color: #666;
 }
 
 .carousel-item:hover {
     transform: scale(1.1);
 }
 
-/* Add scrollbar styling */
-.carousel::-webkit-scrollbar {
-    height: 8px;
-}
-
-.carousel::-webkit-scrollbar-track {
-    background: #ddd;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-    border: 3px solid #ddd;
-}
-
-/* Responsive Carousel */
+/* Responsive Styles for Carousel */
 @media (max-width: 768px) {
     .carousel-item {
         margin: 0 10px;
@@ -353,12 +430,11 @@ header h1 {
     }
 
     .carousel-item img {
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     .carousel-item p {
         font-size: 0.8em;
     }
 }
-
