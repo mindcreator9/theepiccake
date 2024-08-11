@@ -209,6 +209,9 @@ header h1 {
     color: #fff;
 }
 
+
+
+
 .employee-position {
     font-size: 1.2em;
     color: #777;
@@ -218,7 +221,7 @@ header h1 {
 #links-carousel {
     text-align: center;
     padding: 40px 0;
-    background-color: #2b2b2b;
+    background-color: #140303;
 }
 
 #links-carousel h2 {
@@ -331,6 +334,11 @@ header h1 {
     background-color: #7343a5;
 }
 
+
+
+
+
+
 /* Animaciones */
 @keyframes fadeIn {
     from {
@@ -360,3 +368,68 @@ header h1 {
         opacity: 1;
     }
 }
+
+.centered-text {
+    text-align: center;
+    margin: 20px 0; /* Ajusta el espacio superior e inferior según tus necesidades */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+
+
+/* Nueva sección de Juegos */
+#juegos {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #2b2b2b; /* Fondo oscuro */
+    animation: fadeInUp 1.5s ease;
+}
+
+#juegos h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #fff;
+}
+
+.juego {
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+}
+
+.juego img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.juego h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+/* Responsive Styles for Juegos */
+@media (max-width: 768px) {
+    #juegos h2 {
+        font-size: 1.6em;
+    }
+
+    .juego {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    #juegos h2 {
+        font-size: 1.4em;
+    }
+
+    .juego {
+        margin: 5px;
+    }
+}
+
+
