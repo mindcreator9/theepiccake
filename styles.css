@@ -1,435 +1,296 @@
-/* Ajuste general */
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Reseteo de márgenes y paddings */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilo del cuerpo */
 body {
-    background-color: #1c1c1c; /* Color de fondo negro */
-    color: #fff; /* Texto en blanco */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Evitar desbordamiento horizontal */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Barra superior */
-header {
+/* Estilos de la barra de navegación */
+.navbar {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
     justify-content: space-between;
-}
-
-.logo {
-    display: flex;
     align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-    word-wrap: break-word;
-}
-
-.login-button {
-    background-color: #5a2a83; /* Botón violeta */
-    color: #fff;
-    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
-    border-radius: 25px; /* Esquinas redondeadas */
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-    background-color: #7343a5; /* Un violeta más claro al pasar el mouse */
-}
-
-/* Modal de términos y condiciones */
-.modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
     z-index: 1000;
 }
 
-.modal-content {
-    background-color: #2b2b2b; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    padding: 15px;
-    border-radius: 10px;
-    text-align: left;
-    max-width: 90%;
-    width: 500px;
-    animation: fadeIn 0.5s ease-in-out;
+/* Logo en la barra de navegación */
+.navbar .logo img {
+    height: 40px;
 }
 
-.hidden {
+/* Menú de navegación */
+.navbar nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #6c63ff;
+    color: white;
+}
+
+/* Estilos de menú móvil */
+.menu-toggle {
     display: none;
-}
-
-.modal-content h2 {
-    text-align: center;
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-.terms-content {
-    margin: 20px 0;
-    font-size: 0.85em;
-    color: #fff;
-}
-
-.terms-content h3 {
-    margin-top: 15px;
-    font-size: 1.1em;
-    color: #c5c5c5; /* Texto gris claro */
-}
-
-.terms-content p {
-    margin: 5px 0;
-}
-
-.modal-content button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    border: none;
-    background-color: #5a2a83;
-    color: #fff;
+    flex-direction: column;
     cursor: pointer;
-    border-radius: 25px; /* Esquinas redondeadas */
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle.active div:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active div:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar nav {
+    display: flex;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el contenido principal */
+#main-content {
+    padding: 100px 20px 20px 20px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    color: #6c63ff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+    color: #666;
+}
+
+.explore-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.modal-content button:hover {
-    background-color: #7343a5;
+.explore-button:hover {
+    background-color: #5753d9;
 }
 
-/* Hero */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #1c1c1c;
-    animation: slideInFromLeft 1s ease-out;
-    padding: 0 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-    text-align: center;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.typing-animation {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 5vw;
-    color: #fff;
-    border-right: 4px solid;
-    white-space: pre-wrap; /* Permite el salto de línea en el texto */
-    overflow: hidden;
-    width: 100%;
-    text-align: center;
-    animation: typing 3s steps(22) forwards, blink 0.5s step-end infinite alternate;
-    display: inline-block; /* Asegura que el texto se ajuste en el contenedor */
-}
-
-/* Responsive Styles for Hero */
-@media (max-width: 768px) {
-    .typing-animation {
-        font-size: 4vw;
-        white-space: normal; /* Permite el salto de línea cuando el texto no cabe en una sola línea */
-    }
-}
-
-@media (max-width: 480px) {
-    .typing-animation {
-        font-size: 3vw;
-    }
-}
-
-
-/* Secciones */
+/* Secciones de información */
 .section {
-    padding: 40px 20px;
+    margin-bottom: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de ejecutivos centrado */
+.centered-text h2 {
     text-align: center;
-    animation: fadeInUp 1.5s ease;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6c63ff;
 }
 
-.company-info {
-    background-color: #2b2b2b;
-    color: #ccc;
-}
-
-/* Employee Section */
+/* Estilos para la sección de empleados */
 .employee-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    background-color: #1c1c1c; /* Fondo oscuro */
+    justify-content: center;
+    gap: 40px;
 }
 
 .employee {
     text-align: center;
-    margin: 0 20px;
-    background-color: #3a3a3a; /* Fondo gris oscuro claro */
-    padding: 10px;
-    border-radius: 15px; /* Esquinas redondeadas */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .employee img {
-    border-radius: 50%;
     width: 150px;
     height: 150px;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-}
-
-.employee-name {
-    margin-top: 10px;
-    font-size: 1.5em;
-    color: #fff;
-}
-
-
-
-
-.employee-position {
-    font-size: 1.2em;
-    color: #777;
-}
-
-/* Carousel Styles */
-#links-carousel {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #140303;
-}
-
-#links-carousel h2 {
-    margin-bottom: 20px;
-    font-size: 1.8em;
-    color: #fff;
-}
-
-.carousel {
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
-.carousel-item {
-    flex: 0 0 auto;
-    margin: 0 15px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.carousel-item img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    border-radius: 50%;
     margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
-.carousel-item p {
-    font-size: 1em;
-    color: #fff;
-}
-
-.carousel-item:hover {
+.employee img:hover {
     transform: scale(1.1);
 }
 
-/* Responsive Styles for Carousel */
-@media (max-width: 768px) {
-    .carousel-item {
-        margin: 0 10px;
-    }
-
-    .carousel-item img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .carousel-item p {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-item {
-        margin: 0 5px;
-    }
-
-    .carousel-item img {
-        width: 60px;
-        height: 60px;
-    }
-
-    .carousel-item p {
-        font-size: 0.8em;
-    }
-}
-
-/* Modal de Login */
-#login-modal h2 {
-    text-align: center;
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-#login-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#login-form label {
-    margin-top: 10px;
+.employee-name {
+    font-size: 20px;
+    color: #333;
     margin-bottom: 5px;
-    font-size: 1em;
-    color: #fff;
 }
 
-#login-form input {
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    background-color: #333; /* Fondo oscuro en campos de texto */
-    color: #fff; /* Texto blanco */
+.employee-position {
+    font-size: 16px;
+    color: #777;
 }
 
-#login-form button {
-    padding: 10px 20px;
-    background-color: #5a2a83;
-    color: #fff;
-    border: none;
-    border-radius: 25px; /* Esquinas redondeadas */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#login-form button:hover {
-    background-color: #7343a5;
-}
-
-
-
-
-
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideInFromLeft {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.centered-text {
-    text-align: center;
-    margin: 20px 0; /* Ajusta el espacio superior e inferior según tus necesidades */
-    font-size: 28px;
-    font-weight: bold;
-}
-
-
-
-
-/* Nueva sección de Juegos */
+/* Estilos para la sección de juegos */
 #juegos {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #2b2b2b; /* Fondo oscuro */
-    animation: fadeInUp 1.5s ease;
+    margin-top: 50px;
+    padding: 20px;
 }
 
 #juegos h2 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #fff;
+    font-size: 28px;
+    color: #6c63ff;
+    margin-bottom: 30px;
 }
 
 .juego {
     display: inline-block;
-    margin: 10px;
-    text-align: center;
+    width: 300px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.juego:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .juego img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
 .juego h3 {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #fff;
+    font-size: 22px;
+    color: #333;
+    margin: 15px 0;
 }
 
-/* Responsive Styles for Juegos */
+.juego a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 20px;
+}
+
+.juego a:hover {
+    background-color: #f9f9f9;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
-    #juegos h2 {
-        font-size: 1.6em;
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        padding-top: 20px;
+    }
+
+    .navbar nav ul.active {
+        transform: translateX(0);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .employee-container {
+        flex-direction: column;
     }
 
     .juego {
-        margin: 5px;
+        width: 100%;
+        margin: 10px 0;
     }
 }
-
-@media (max-width: 480px) {
-    #juegos h2 {
-        font-size: 1.4em;
-    }
-
-    .juego {
-        margin: 5px;
-    }
-}
-
-
