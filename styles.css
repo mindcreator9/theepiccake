@@ -294,3 +294,33 @@ body {
         margin: 10px 0;
     }
 }
+
+
+
+.apply-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.apply-button:hover {
+    background-color: #5753d9;
+}
+
+
+.terms {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
