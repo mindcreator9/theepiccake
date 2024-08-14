@@ -4,27 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const termsModal = document.getElementById('terms-modal');
     const acceptTermsButton = document.getElementById('accept-terms');
     const mainContent = document.getElementById('main-content');
+
+    // Función para mostrar un modal
+    function showModal(modal) {
+        modal.classList.remove('hidden');
+    }
+
+    // Función para ocultar un modal
+    function hideModal(modal) {
+        modal.classList.add('hidden');
+    }
+
     // Mostrar el modal de login al hacer clic en el botón de login
     loginButton.addEventListener('click', () => {
-        loginModal.classList.remove('hidden');
+        showModal(loginModal);
     });
 
     // Manejar la aceptación de términos y condiciones
     acceptTermsButton.addEventListener('click', () => {
-        termsModal.classList.add('hidden');
+        hideModal(termsModal);
         mainContent.classList.remove('hidden');
     });
 
     // Manejar el envío del formulario de login (simulado)
     document.getElementById('login-form').addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('El sistema de login aun no esta construido.');
-        loginModal.classList.add('hidden');
+        alert('El sistema de login aún no está construido.');
+        hideModal(loginModal);
     });
+});
 
-
-    });
-    
-
-
-    
