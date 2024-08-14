@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const termsModal = document.getElementById('terms-modal');
     const acceptTermsButton = document.getElementById('accept-terms');
     const mainContent = document.getElementById('main-content');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
 
     // Función para mostrar un modal
     function showModal(modal) {
@@ -16,21 +18,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Mostrar el modal de login al hacer clic en el botón de login
-    loginButton.addEventListener('click', () => {
-        showModal(loginModal);
-    });
+    if (loginButton) {
+        loginButton.addEventListener('click', () => {
+            if (loginModal) {
+                showModal(loginModal);
+            }
+        });
+    }
 
     // Manejar la aceptación de términos y condiciones
-    acceptTermsButton.addEventListener('click', () => {
-        hideModal(termsModal);
-        mainContent.classList.remove('hidden');
-    });
+    if (acceptTermsButton) {
+        acceptTermsButton.addEventListener('click', () => {
+            if (termsModal) {
+                hideModal(termsModal);
+            }
+            if (mainContent) {
+                mainContent.classList.remove('hidden');
+            }
+        });
+    }
 
     // Manejar el envío del formulario de login (simulado)
-    document.getElementById('login-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('El sistema de login aún no está construido.');
-        hideModal(loginModal);
-    });
-});
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('El sistema de login aún no está construido.');
+            if (loginModal) {
+                hideModal(loginModal);
+            }
+        });
+    }
 
+    // Manejar el botón de menú para dispositivos móviles
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+    }
+});
